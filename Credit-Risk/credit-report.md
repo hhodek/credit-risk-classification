@@ -1,31 +1,45 @@
 # Module 12 Report Template
 
 ## Overview of the Analysis
+* Purpose of the Analysis: The purpose of this analysis was to develop machine learning models to predict credit risk. Specifically, we aimed to predict whether a loan is a healthy loan (0) or a high-risk loan (1).
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+Financial Information: 
+* The data used for analysis included various financial features, with the target variable being "loan_status."
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+Variables: 
+* The target variable loan_status had two classes: 0 (healthy loan) and 1 (high-risk loan).
+
+Machine Learning Process Stages:
+* Data preprocessing, including splitting the data into training and testing sets.
+* Creating and training two logistic regression models (Model 1 and Model 2).
+* Evaluating the models using metrics like balanced accuracy, precision, recall, confusion matrices, and classification reports.
+
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+Machine Learning Model 1:
+* Balanced Accuracy Score: 0.9443
+* Precision for Class 0 (Healthy Loan): 1.00
+* Precision for Class 1 (High-Risk Loan): 0.87
+* Recall for Class 0: 1.00
+* Recall for Class 1: 0.89
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
 
+Machine Learning Model 2:
+* Balanced Accuracy Score: 0.9960
+* Precision for Class 0: 1.00
+* Precision for Class 1: 0.87
+* Recall for Class 0: 1.00
+* Recall for Class 1: 1.00
 
-
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+Model Performance: 
+* Both models perform exceptionally well in predicting healthy loans (Class 0), with high precision and recall. Model 2, however, excels in predicting high-risk loans (Class 1) with perfect recall, indicating that it doesn't miss any high-risk loans.
 
-If you do not recommend any of the models, please justify your reasoning.
+Recommendation: 
+* Model 2 outperforms Model 1 in terms of balanced accuracy and recall for high-risk loans. This suggests that Model 2 is more reliable for identifying high-risk loans, which is crucial for minimizing potential financial losses. Therefore, I recommend using Model 2 for credit risk prediction.
+
+Problem Dependency: 
+* The performance of the model depends on the problem's context. If the primary concern is to accurately identify high-risk loans to mitigate financial risks, Model 2 is the preferred choice. However, if balance between precision and recall for both classes is crucial, Model 1 may be considered as it maintains good performance for both classes.
